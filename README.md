@@ -17,5 +17,5 @@ MemeStash is a simple website for storing memes so you can quickly retrieve and 
 ## Run locally
 
 ```bash
-dotnet run --project /home/runner/work/memestash/memestash/MemeStash.csproj
+dotnet run --project MemeStash.csproj
 ```

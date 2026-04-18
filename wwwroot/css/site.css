@@ -1,0 +1,80 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Drop zone */
+.drop-zone {
+  border: 3px dashed #dee2e6;
+  border-radius: 12px;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.drop-zone.drag-over {
+  border-color: #0d6efd;
+  background-color: #e8f0fe;
+}
+
+.drop-zone-content {
+  pointer-events: none;
+}
+
+.drop-zone-content .btn,
+.drop-zone-content input {
+  pointer-events: auto;
+}
+
+/* Meme cards */
+.meme-card {
+  transition: transform 0.15s, box-shadow 0.15s;
+  overflow: hidden;
+}
+
+.meme-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.meme-img {
+  object-fit: contain;
+  max-height: 250px;
+  background: #f8f9fa;
+}
+
+/* Pinned badge */
+.meme-card {
+  position: relative;
+}
+
+.pinned-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 1.2rem;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Toast notification */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+}

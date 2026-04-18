@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center py-5">
+    <h1 class="display-4 fw-bold">🗂️ MemeStash</h1>
+    <p class="lead text-muted mt-3">
+        Stash your memes. Use them everywhere.<br />
+        No signup. No login. Just pick a name and start stashing.
+    </p>
+
+    <form method="post" class="mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text">memestash.com/</span>
+                    <input type="text" name="slug" class="form-control" placeholder="your-name"
+                           pattern="[a-zA-Z0-9][a-zA-Z0-9\-]{1,28}[a-zA-Z0-9]"
+                           title="3-30 characters: letters, numbers, and hyphens"
+                           required autofocus />
+                    <button type="submit" class="btn btn-primary">Go to my stash</button>
+                </div>
+                <small class="text-muted mt-1 d-block">
+                    3–30 characters. Letters, numbers, and hyphens only.
+                </small>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row text-center mt-5">
+    <div class="col-md-4">
+        <h4>📤 Upload</h4>
+        <p class="text-muted">Drag and drop memes into your stash. JPG, PNG, GIF, WebP &mdash; up to 5 MB.</p>
+    </div>
+    <div class="col-md-4">
+        <h4>📋 Copy</h4>
+        <p class="text-muted">Copy a direct link to any meme and paste it in chat, forums, or social media.</p>
+    </div>
+    <div class="col-md-4">
+        <h4>🗑️ Clean up</h4>
+        <p class="text-muted">Delete memes you no longer need. Your stash, your rules.</p>
+    </div>
+</div>

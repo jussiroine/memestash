@@ -1,0 +1,46 @@
+@page
+@model MemeStash.Pages.BrowseModel
+@{
+    ViewData["Title"] = "Browse Stashes";
+}
+
+<h2 class="mb-4">🔍 Browse Stashes</h2>
+
+@if (Model.Stashes.Count == 0)
+{
+    <div class="text-center text-muted py-5">
+        <p class="fs-4">No stashes yet!</p>
+        <p>Be the first &mdash; <a asp-page="/Index">create a stash</a>.</p>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Stash</th>
+                    <th class="text-end">Memes</th>
+                    <th class="text-end">Size</th>
+                    <th class="text-end">Last upload</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stash in Model.Stashes)
+                {
+                    <tr>
+                        <td>
+                            <a asp-page="/Stash" asp-route-slug="@stash.Slug" class="fw-semibold text-decoration-none">
+                                🗂️ @stash.Slug
+                            </a>
+                        </td>
+                        <td class="text-end">@stash.MemeCount</td>
+                        <td class="text-end">@stash.TotalSizeFormatted</td>
+                        <td class="text-end text-muted">@stash.LastUploadedAt.ToString("MMM d, yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <p class="text-muted small">@Model.Stashes.Count stash@(Model.Stashes.Count == 1 ? "" : "es") found</p>
+}
